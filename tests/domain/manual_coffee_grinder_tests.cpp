@@ -10,6 +10,8 @@ TEST(ManualCoffeeGrinder, grindShouldRefineCoffeeBeans) {
   auto beans = sample_beans();
   auto original_grind = beans.grind();
 
-  mcg.grind(beans, CoffeeGrind::extreme_fine);
-  ASSERT_NE(beans.grind(), original_grind);
+  auto new_grind = CoffeeGrind::extreme_fine;
+  mcg.grind(beans, new_grind);
+  EXPECT_NE(beans.grind(), original_grind);
+  ASSERT_EQ(beans.grind(), new_grind);
 }

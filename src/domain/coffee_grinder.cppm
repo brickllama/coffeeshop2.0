@@ -8,7 +8,7 @@ export class CoffeeGrinder {
 public:
   explicit CoffeeGrinder(double capacity) : capacity_(capacity) {}
 
-  virtual void grind(const CoffeeBeans &beans, CoffeeGrind grind) = 0;
+  virtual void grind(CoffeeBeans &beans, CoffeeGrind grind) = 0;
   virtual double capacity() const = 0;
 
   virtual ~CoffeeGrinder() = default;

@@ -11,7 +11,7 @@ public:
   explicit ManualCoffeeGrinder(double capacity = STANDARD_PUCK_SIZE)
       : CoffeeGrinder(capacity) {}
 
-  void grind(const CoffeeBeans &beans, CoffeeGrind grind) override;
+  void grind(CoffeeBeans &beans, CoffeeGrind grind) override;
   double capacity() const override;
 
 private:
@@ -20,8 +20,8 @@ private:
 
 module :private; /* Implementation Unit. */
 
-void ManualCoffeeGrinder::grind(const CoffeeBeans &beans, CoffeeGrind grind) {
-  /// foo
+void ManualCoffeeGrinder::grind(CoffeeBeans &beans, CoffeeGrind grind) {
+  beans.set_grind(grind);
 }
 
 double ManualCoffeeGrinder::capacity() const {
