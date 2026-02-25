@@ -3,6 +3,7 @@ add_executable(coffeemakers.tests)
 target_sources(coffeemakers.tests
     PRIVATE
         coffee_beans_tests.cpp
+        manual_coffee_grinder_tests.cpp
 )
 
 target_link_libraries(coffeemakers.tests

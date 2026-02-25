@@ -1,5 +1,5 @@
-export module CoffeeBeans;
-import std.compat; /* <cstdint>; <stdexcept> */
+export module CoffeeBeans; /* Interface Unit. */
+import std.compat;         /* <cstdint>; <stdexcept> */
 
 /**
  * @brief Different kinds of coffee roasts.
@@ -75,7 +75,7 @@ private:
   CoffeeGrind grind_; /* Grind size. */
 };
 
-module :private;
+module :private; /* Implementation Unit. */
 
 double CoffeeBeans::grams() const { return this->grams_; }
 
