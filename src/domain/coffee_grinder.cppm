@@ -23,4 +23,4 @@ private:
 
 module :private; /* Implementation Unit. */
 
-double CoffeeGrinder::capacity() const { return 0.0; }
+double CoffeeGrinder::capacity() const { return this->capacity_; }
