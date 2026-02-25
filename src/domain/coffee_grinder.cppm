@@ -14,9 +14,6 @@ public:
 
   virtual ~CoffeeGrinder() = default;
 
-protected:
-  virtual bool requires_manual_effort() const = 0;
-
 private:
   double capacity_;
 };

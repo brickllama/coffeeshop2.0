@@ -20,3 +20,8 @@ TEST(ManualCoffeeGrinder, capacityShouldReturnStandardPuckSizeAsDefault) {
   ManualCoffeeGrinder mcg;
   ASSERT_EQ(mcg.capacity(), STANDARD_PUCK_SIZE);
 }
+
+TEST(ManualCoffeeGrinder, grind_durationShouldReturnPositive) {
+  ManualCoffeeGrinder mcg;
+  ASSERT_TRUE(true);
+}

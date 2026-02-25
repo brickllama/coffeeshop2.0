@@ -12,9 +12,6 @@ public:
       : CoffeeGrinder(capacity) {}
 
   void grind(CoffeeBeans &beans, CoffeeGrind grind) override;
-
-private:
-  bool requires_manual_effort() const override;
 };
 
 module :private; /* Implementation Unit. */
