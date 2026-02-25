@@ -5,7 +5,7 @@ CoffeeBeans sample_beans() {
   return CoffeeBeans{15.0, CoffeeRoast::dark, CoffeeGrind::whole};
 }
 
-TEST(ManualCoffeeGrinder, grindShouldRefineCoffeeBeans) {
+TEST(ManualCoffeeGrinder, grind_Should_Refine_CoffeeBeans) {
   ManualCoffeeGrinder mcg;
   auto beans = sample_beans();
   auto original_grind = beans.grind();
@@ -16,12 +16,12 @@ TEST(ManualCoffeeGrinder, grindShouldRefineCoffeeBeans) {
   ASSERT_EQ(beans.grind(), new_grind);
 }
 
-TEST(ManualCoffeeGrinder, capacityShouldReturnStandardPuckSizeAsDefault) {
+TEST(ManualCoffeeGrinder, capacity_Should_Return_StandardPuckSize_As_Default) {
   ManualCoffeeGrinder mcg;
   ASSERT_EQ(mcg.capacity(), STANDARD_PUCK_SIZE);
 }
 
-TEST(ManualCoffeeGrinder, grind_durationShouldReturnPositive) {
+TEST(ManualCoffeeGrinder, grind_duration_Should_Return_Positive_Integer) {
   ManualCoffeeGrinder mcg;
   ASSERT_TRUE(true);
 }

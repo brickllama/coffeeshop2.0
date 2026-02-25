@@ -19,5 +19,3 @@ module :private; /* Implementation Unit. */
 void ManualCoffeeGrinder::grind(CoffeeBeans &beans, CoffeeGrind grind) {
   beans.set_grind(grind);
 }
-
-bool ManualCoffeeGrinder::requires_manual_effort() const { return true; }
