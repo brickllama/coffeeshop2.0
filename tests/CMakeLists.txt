@@ -1,3 +1,3 @@
 enable_testing()
 find_package(GTest REQUIRED)
-add_subdirectory(ingredients)
+add_subdirectory(domain)

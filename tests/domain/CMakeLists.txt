@@ -2,11 +2,11 @@ add_executable(coffeemakers.tests)
 
 target_sources(coffeemakers.tests
     PRIVATE
-        liquid_tests.cpp
+        coffee_beans_tests.cpp
 )
 
 target_link_libraries(coffeemakers.tests
     PRIVATE
-        ingredients
+        domain
         GTest::gtest_main
 )
