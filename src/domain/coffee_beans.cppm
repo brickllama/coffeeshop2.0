@@ -1,9 +1,5 @@
-module;
-
-#include <cstdint>
-#include <print>
-
 export module CoffeeBeans;
+import std.compat; /* <cstdint>; <stdexcept> */
 
 /**
  * @brief Different kinds of coffee roasts.
