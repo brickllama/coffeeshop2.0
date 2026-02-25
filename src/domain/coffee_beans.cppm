@@ -79,7 +79,7 @@ public:
    * grind.
    * @throws std::runtime_error if attempting to 'un-grind' the beans.
    */
-  void set_grind(CoffeeGrind grind);
+  void set_grind(CoffeeGrind target_grind);
 
 private:
   double grams_;      /* Weight of the beans in grams. */
@@ -95,10 +95,9 @@ CoffeeRoast CoffeeBeans::roast() const { return this->roast_; }
 
 CoffeeGrind CoffeeBeans::grind() const { return this->grind_; }
 
-void CoffeeBeans::set_grind(CoffeeGrind grind) {
-  if (CoffeeGrind_difference(this->grind_, grind) < 0) {
+void CoffeeBeans::set_grind(CoffeeGrind target_grind) {
+  if (CoffeeGrind_difference(this->grind_, target_grind) < 0) {
     throw std::runtime_error("COFFEE BEANS CAN NOT BE UNGROUND!");
-  } else {
-    this->grind_ = grind;
   }
+  this->grind_ = target_grind;
 }
