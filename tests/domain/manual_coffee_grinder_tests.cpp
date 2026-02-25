@@ -15,3 +15,8 @@ TEST(ManualCoffeeGrinder, grindShouldRefineCoffeeBeans) {
   EXPECT_NE(beans.grind(), original_grind);
   ASSERT_EQ(beans.grind(), new_grind);
 }
+
+TEST(ManualCoffeeGrinder, capacityShouldReturnStandardPuckSizeAsDefault) {
+  ManualCoffeeGrinder mcg;
+  ASSERT_EQ(mcg.capacity(), STANDARD_PUCK_SIZE);
+}

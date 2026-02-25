@@ -9,7 +9,8 @@ public:
   explicit CoffeeGrinder(double capacity) : capacity_(capacity) {}
 
   virtual void grind(CoffeeBeans &beans, CoffeeGrind grind) = 0;
-  virtual double capacity() const = 0;
+
+  double capacity() const;
 
   virtual ~CoffeeGrinder() = default;
 
@@ -21,3 +22,5 @@ private:
 };
 
 module :private; /* Implementation Unit. */
+
+double CoffeeGrinder::capacity() const { return 0.0; }
