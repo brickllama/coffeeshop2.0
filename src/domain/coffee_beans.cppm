@@ -27,6 +27,18 @@ export enum class CoffeeGrind : std::uint8_t {
 };
 
 /**
+ * @brief Compile-time comparison between different CoffeeGrind stages.
+ *
+ * @param original The starting grind.
+ * @param target The target grind.
+ * @return An integer.
+ */
+export constexpr int CoffeeGrind_difference(CoffeeGrind original,
+                                            CoffeeGrind target) {
+  return static_cast<int>(target) - static_cast<int>(original);
+}
+
+/**
  * Represents a portion of coffee beans with a specific roast and grind.
  */
 export class CoffeeBeans {
@@ -84,7 +96,7 @@ CoffeeRoast CoffeeBeans::roast() const { return this->roast_; }
 CoffeeGrind CoffeeBeans::grind() const { return this->grind_; }
 
 void CoffeeBeans::set_grind(CoffeeGrind grind) {
-  if (this->grind_ > grind) {
+  if (CoffeeGrind_difference(this->grind_, grind) < 0) {
     throw std::runtime_error("COFFEE BEANS CAN NOT BE UNGROUND!");
   } else {
     this->grind_ = grind;
