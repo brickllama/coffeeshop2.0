@@ -1,4 +1,4 @@
-add_subdirectory(coffeemakers)
+add_subdirectory(ingredients)
 
 add_executable(coffeeshop2)
 
@@ -9,5 +9,5 @@ target_sources(coffeeshop2
 
 target_link_libraries(coffeeshop2
     PRIVATE
-        coffeemakers
+        ingredients
 )
