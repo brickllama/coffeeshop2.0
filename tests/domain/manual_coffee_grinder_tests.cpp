@@ -10,10 +10,10 @@ TEST(ManualCoffeeGrinder, grind_Should_Refine_CoffeeBeans) {
   auto beans = sample_beans();
   auto original_grind = beans.grind();
 
-  auto new_grind = CoffeeGrind::extreme_fine;
-  mcg.grind(beans, new_grind);
+  auto target_grind = CoffeeGrind::extreme_fine;
+  mcg.grind(beans, target_grind);
   EXPECT_NE(beans.grind(), original_grind);
-  ASSERT_EQ(beans.grind(), new_grind);
+  ASSERT_EQ(beans.grind(), target_grind);
 }
 
 TEST(ManualCoffeeGrinder, capacity_Should_Return_StandardPuckSize_As_Default) {
@@ -23,5 +23,8 @@ TEST(ManualCoffeeGrinder, capacity_Should_Return_StandardPuckSize_As_Default) {
 
 TEST(ManualCoffeeGrinder, grind_duration_Should_Return_Positive_Integer) {
   ManualCoffeeGrinder mcg;
-  ASSERT_TRUE(true);
+  auto beans = sample_beans();
+
+  auto target_grind = CoffeeGrind::coarse;
+  ASSERT_GE(mcg.grind_duration(beans, target_grind), 0);
 }

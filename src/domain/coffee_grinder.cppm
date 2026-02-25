@@ -9,6 +9,8 @@ public:
   explicit CoffeeGrinder(double capacity) : capacity_(capacity) {}
 
   virtual void grind(CoffeeBeans &beans, CoffeeGrind grind) = 0;
+  virtual double grind_duration(CoffeeBeans &beans,
+                                CoffeeGrind grind) const = 0;
 
   double capacity() const;
 

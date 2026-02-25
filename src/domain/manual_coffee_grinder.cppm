@@ -12,10 +12,16 @@ public:
       : CoffeeGrinder(capacity) {}
 
   void grind(CoffeeBeans &beans, CoffeeGrind grind) override;
+  double grind_duration(CoffeeBeans &beans, CoffeeGrind grind) const override;
 };
 
 module :private; /* Implementation Unit. */
 
 void ManualCoffeeGrinder::grind(CoffeeBeans &beans, CoffeeGrind grind) {
   beans.set_grind(grind);
+}
+
+double ManualCoffeeGrinder::grind_duration(CoffeeBeans &beans,
+                                           CoffeeGrind grind) const {
+  return -1.0;
 }
